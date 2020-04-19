@@ -2,7 +2,7 @@ extends Knight
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass
 
 func get_input():
 
@@ -23,11 +23,17 @@ func get_input():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	get_input()
-	var mouse_pos = get_viewport().get_mouse_position() * 4
-	var origin = get_viewport().size / 2.0
-	var dir = (origin - mouse_pos).normalized()
+
+	var screen_scale = (get_viewport().size / get_viewport_rect().size)
+	var mouse_pos = get_viewport().get_mouse_position() * screen_scale
+	var scaled_pos = get_global_transform_with_canvas().origin * screen_scale
+	var dir = (scaled_pos - mouse_pos).normalized()
 
 	body_dest_angle = dir.angle() + PI/2.0
+	
+	rotate_head(0.3)
+	rotate_body(0.4)
+
 		
 func _input(event):
 	
