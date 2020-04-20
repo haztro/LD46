@@ -29,7 +29,7 @@ func _ready():
 	$Player.connect("dead", self, "game_over")
 	$King.connect("dead", self, "game_over")
 	
-	var sword1 = halberd.instance()
+	var sword1 = dagger.instance()
 	$Player.equip(sword1)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

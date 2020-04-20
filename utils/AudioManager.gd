@@ -19,11 +19,12 @@ func play(name, fade_in=0):
 	streamPlayer.connect('finished', streamPlayer, 'queue_free')
 	streamPlayer.name = name
 	add_child(streamPlayer)
-	
+
 	if name == "hit":
 		streamPlayer.stream = hit
 	elif name == "swing":
 		streamPlayer.stream = swing
+		streamPlayer.volume_db = -20
 	elif name == "death":
 		streamPlayer.stream = death
 	elif name == "coin":
