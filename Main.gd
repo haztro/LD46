@@ -45,9 +45,9 @@ func choose_weapon():
 		return dagger.instance()
 	elif level < 5:
 		return level3weps[floor(rand_range(0,2))].instance()
-	elif level < 8:
+	elif level < 9:
 		return level5weps[floor(rand_range(0,3))].instance()
-	elif level >= 8:
+	elif level >= 9:
 		return level8weps[floor(rand_range(0,4))].instance()
 	return sword.instance()
 		
@@ -110,7 +110,7 @@ func start_game():
 
 func _on_enemy_spawn_timeout():
 	if wave_ongoing and level > 0:
-		for i in range(floor(rand_range(1, min(level, 5)))):
+		for i in range(floor(rand_range(1, min(level, 4)))):
 			add_enemy(Vector2(i, 16*16))
 	$enemy_spawn.start()
 
