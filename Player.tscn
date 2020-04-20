@@ -6,14 +6,7 @@
 [node name="Player" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
-[node name="right_hand" parent="." index="0"]
-rotation = 3.14159
-
-[node name="MeleeWeapon" parent="right_hand" index="0"]
-rotation = 0.0
-
-[node name="Camera2D" type="Camera2D" parent="." index="6"]
-current = true
+[node name="Camera2D" type="Camera2D" parent="." index="5"]
 limit_left = -208
 limit_top = -176
 limit_right = 208
